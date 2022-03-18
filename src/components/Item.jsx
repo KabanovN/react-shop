@@ -1,10 +1,10 @@
 function Item(props) {
-    const { id, name, description, price, icon, addItem } = props;
+    const { id, name, description, price, full_background, addItem } = props;
 
     return (
         <div className='card'>
             <div className='card-image'>
-                <img src={icon} alt={name} />
+                <img src={full_background} alt={name} />
             </div>
             <div className='card-content'>
                 <span className='card-title'>{name}</span>

@@ -12,10 +12,12 @@ code {
         monospace;
 }
 
+/* Header */
 nav {
     padding: 0 20px;
 }
 
+/* Shop */
 .content {
     min-height: calc(100vh - 64px - 70px);
     padding: 30px 30px;
@@ -26,12 +28,14 @@ nav {
     margin: 200px auto;
 }
 
+/* ItemList */
 .cards {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
+/* Item */
 .card {
     display: flex;
     flex-direction: column;
@@ -45,6 +49,7 @@ nav {
     font-style: italic;
 }
 
+/* Cart */
 .cart {
     position: fixed;
     bottom: 2rem;
@@ -52,7 +57,7 @@ nav {
     padding: 1rem;
 
     cursor: pointer;
-    z-index: 5;
+    z-index: 11;
 }
 
 @media (min-width: 767px) {
@@ -60,4 +65,35 @@ nav {
         top: 5rem;
         bottom: unset;
     }
+}
+
+/* CartList */
+.cart-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+}
+
+.cart-list {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: 95%;
+    width: 50rem;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+}
+
+.secondary-content {
+    cursor: pointer;
+}
+
+/* CartItem */
+.btn-tiny:focus {
+    background-color: none;
+    outline: none;
 }
