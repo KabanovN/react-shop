@@ -97,3 +97,8 @@ nav {
     background-color: none;
     outline: none;
 }
+
+/* Toast */
+#toast-container {
+    top: 3rem;
+}

@@ -4,12 +4,14 @@ import ItemList from './ItemList';
 import Preloader from './Preloader';
 import Cart from './Cart';
 import CartList from './CartList';
+import Toast from './Toast';
 
 function Shop() {
     const [isLoading, setIsLoading] = useState(true);
     const [items, setItems] = useState([]);
     const [order, setOrder] = useState([]);
     const [isCartShow, setCartShow] = useState(false);
+    const [toastName, setToastName] = useState('');
 
     //добавляем новый товар в корзину
     const addItem = (item) => {
@@ -34,6 +36,8 @@ function Shop() {
             });
             setOrder(newOrder);
         }
+
+        setToastName(item.name);
     };
 
     //отображение корзины по клику
@@ -78,6 +82,10 @@ function Shop() {
         setOrder(newOrder);
     };
 
+    const closeToast = () => {
+        setToastName('');
+    };
+
     //первичный рендеринг
     useEffect(() => {
         fetch(API_URL, {
@@ -111,6 +119,8 @@ function Shop() {
                     decrement={decrement}
                 />
             ) : null}
+
+            {toastName && <Toast name={toastName} closeToast={closeToast} />}
         </main>
     );
 }

@@ -43,6 +43,9 @@ function CartList(props) {
                 <li className='collection-item active'>
                     Общая стоимость: {totalPrice} руб.
                 </li>
+                <li className='collection-item'>
+                    <button className='btn'>Оформить заказ</button>
+                </li>
             </ul>
         </div>
     );
