@@ -1,7 +1,11 @@
+import React, { useContext } from 'react';
+import { ShopContext } from '../context';
+
 import Item from './Item';
 
 function ItemList(props) {
-    const { items = [], addItem = Function.prototype } = props;
+    const { items = [] } = props;
+    const { addItem } = useContext(ShopContext);
 
     if (!items.length) {
         return <h3>Ничего не нашёл...</h3>;

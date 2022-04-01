@@ -1,6 +1,10 @@
+import { useContext } from 'react';
+import { ShopContext } from '../context';
+
 function CartItem(props) {
-    const { id, name, price, quantity, deleteItem, increment, decrement } =
-        props;
+    const { id, name, price, quantity } = props;
+
+    const { increment, decrement, deleteItem } = useContext(ShopContext);
 
     return (
         <li className='collection-item'>

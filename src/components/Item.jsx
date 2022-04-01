@@ -1,5 +1,9 @@
+import React, { useContext } from 'react';
+import { ShopContext } from '../context';
+
 function Item(props) {
-    const { id, name, description, price, full_background, addItem } = props;
+    const { id, name, description, price, full_background } = props;
+    const { addItem } = useContext(ShopContext);
 
     return (
         <div className='card'>
